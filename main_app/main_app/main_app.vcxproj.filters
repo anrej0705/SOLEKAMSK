@@ -21,6 +21,15 @@
       <UniqueIdentifier>{639EADAA-A684-42e4-A9AD-28FC9BCB8F7C}</UniqueIdentifier>
       <Extensions>ts</Extensions>
     </Filter>
+    <Filter Include="C_Utils">
+      <UniqueIdentifier>{28e8ba99-abe8-4b45-a627-5173a3c4fc30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Основное окно">
+      <UniqueIdentifier>{5b53c9c4-67c8-4c03-8822-716eb7423ca4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ядро">
+      <UniqueIdentifier>{fad558e2-0d31-4fad-acb0-fb17d0ad0afc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="main_app.qrc">
@@ -35,14 +44,24 @@
     <ClCompile Include="main_app.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ResourceCompile Include="$pro_name$.rc">
-    </ResourceCompile>
-    <None Include="$pro_name$.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="$pro_name$.def">
-      <Filter>Resource Files</Filter>
-    </None>
-
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\utils\utils.c">
+      <Filter>C_Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="mainWindow.cpp">
+      <Filter>Основное окно</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\utils\utils.h">
+      <Filter>C_Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="mainWindow.h">
+      <Filter>Основное окно</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
