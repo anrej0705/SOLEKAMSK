@@ -60,7 +60,8 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <PostBuildEvent>
-      <Command>C:\git\IncrementBuild-x64.exe configuration "C:\git\SOLEKAMSK\main_app\ver.ini" binary "$(TargetPath)" string "ConfigurationName" "$(ConfigurationName)" </Command>
+      <Command>C:\git\IncrementBuild-x64.exe configuration "C:\git\SOLEKAMSK\main_app\main_app\ver.ini" binary "$(TargetPath)" string "ConfigurationName" "$(ConfigurationName)" </Command>
+      <Message>Автоинкремент номера сборки</Message>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">

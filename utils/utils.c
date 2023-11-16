@@ -10,8 +10,8 @@ uint8_t stackLevel=0;
 uint32_t stackBuffer[dataStackDepth];
 uint8_t GetFileName(char* inputPath, char *receivedName){
 	uint8_t masRange=masrng(receivedName);
+	char *oname = (char*)malloc(masRange * sizeof(char));
 	char iname[256];
-	char oname[1];
 	memset(iname,0x00,sizeof(iname));
 	memset(oname,0x00,sizeof(oname));
 	uint8_t nameLenght = strlen(inputPath);
@@ -36,7 +36,8 @@ uint8_t GetFileName(char* inputPath, char *receivedName){
 	return stepsTransfer;}
 inline uint32_t masrng(char* inputArr){
 	for(uint32_t i=0;i<0xFFFFFFFF;++i)
-	{if(inputArr[i]==0x00){return i;}}}
+	{if(inputArr[i]==0x00){return i;}}
+	return 0;}
 void transformFileName(char *sourceFileName, uint8_t sourceLenght, char *suffixToAttach, uint8_t suffixLength, char *arrToStore){
 	char procBuf[224];
 	memset(procBuf,0x00,sizeof(procBuf));
@@ -101,7 +102,8 @@ bool intmas(uint64_t inputValue, uint8_t valueRangeBytes, char *arrToStore){
 			arrToStore[5]=inputValue>>40;
 			arrToStore[6]=inputValue>>8;
 			arrToStore[7]=inputValue;
-			return 1;}}}
+			return 1;}}
+	return 0;}
 void arrcop(char *sourceArr, uint16_t startIndex, char *destinationArr, uint16_t valueOfElements){
 	for(uint16_t i=0;i<valueOfElements;++i){
 		destinationArr[startIndex]=sourceArr[i];
