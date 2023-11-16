@@ -11,7 +11,7 @@ uint32_t stackBuffer[dataStackDepth];
 uint8_t GetFileName(char* inputPath, char *receivedName){
 	uint8_t masRange=masrng(receivedName);
 	char iname[256];
-	char oname[masRange];
+	char oname[1];
 	memset(iname,0x00,sizeof(iname));
 	memset(oname,0x00,sizeof(oname));
 	uint8_t nameLenght = strlen(inputPath);
